@@ -42,7 +42,7 @@ local launchbox = require("launchbox")
 ```
 
 # Minimal configuration example
-Create a Launchbox wibox/popup with default configuration by adding the following line somewhere in your `rc.lua` file.
+Create a launchbox wibox/popup with default configuration by adding the following line somewhere in your `rc.lua` file.
 
 ```lua
 local my_launchbox_popup = launchbox("My Applications"):create_popup()
@@ -53,7 +53,7 @@ Add a key binding (in this example `Super+l`) to your existing `globalkeys` defi
 ```lua
 local globalkeys = gears.table.join(
     ...
-    awful.key({"Mod4"}, "l", my_launchbox_popup.open, {description="Launchbox", group="launcher"}),
+    awful.key({"Mod4"}, "l", my_launchbox_popup.open, {description="launch applications", group="launcher"}),
     ...
 )
 ```
