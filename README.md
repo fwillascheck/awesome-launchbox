@@ -182,7 +182,7 @@ As the name suggests, this function initializes the list of menu items to the de
 `launchbox:start( done_callback )`
 
 Starts the keygrabber of the launcher. 
-- **done_callback**: callback function that is called when the launcher is aborted or if an item has been executed. Can be used to perform additional actions, like hiding or unfocusing the parent widget.
+- **done_callback (optional)**: callback function that is called when the launcher is aborted or if an item has been executed. Can be used to perform additional actions, like hiding or unfocusing the parent widget.
 
 `launchbox:stop()`
 
