@@ -25,8 +25,6 @@ The filter input field is only displayed during typing as an overlay at the last
 - Cache file for menu items to enable faster startup.
 - In-memory caching of filter results.
 - Icons can be disabled to improve performance and for the most-minimal look.
-- Sizes are calculated automatically from the font size.
-- Uses existing theme-variables for colors, borders and font.
 - Live update of filter results during typing.
 
 ## Non-features
