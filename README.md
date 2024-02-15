@@ -42,7 +42,7 @@ local launchbox = require("launchbox")
 ```
 
 # Minimal configuration example
-Create a Launchbox popup with default configuration by adding the following line somewhere in your `rc.lua` file. This will not create a awful.popup object as the function name would suggest, it's a just a normal wibox.
+Create a Launchbox wibox/popup with default configuration by adding the following line somewhere in your `rc.lua` file.
 
 ```lua
 local my_launchbox_popup = launchbox("My Applications"):create_popup()
