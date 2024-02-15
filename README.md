@@ -28,7 +28,6 @@ The filter input field is only displayed during typing as an overlay at the last
 - Sizes are calculated automatically from the font size.
 - Uses existing theme-variables for colors, borders and font.
 - Live update of filter results during typing.
-- Minimal redraws, only when really needed.
 
 ## Non-features
 - No dynamic list update on addition/removal of applications or documents.
@@ -110,8 +109,7 @@ local my_launchbox_widget = launchbox("Example", {
 
 ```
 
-Then we create a wibox/popup object for that widget with all possible configuration options.
-
+This example shows the creation of a wibox/popup object for that widget with all possible configuration options.
 
 ```lua
 local my_launchbox_popup = my_launchbox_widget:create_popup({
@@ -126,7 +124,7 @@ local my_launchbox_popup = my_launchbox_widget:create_popup({
 })
 ```
 
-You can then use the functions `open()`, `close()` or `toggle()` of the popup object in a key binding or button to control its visibility.
+The functions `open()`, `close()` or `toggle()` of the popup object can be used in a key binding or button to control its visibility.
 
 ```lua
 ...
@@ -138,7 +136,7 @@ You can create as many launcher widget objects as you want with their own indivi
 
 ## Embedding example
 
-The next example shows how to use the launcher widget in a parent wibox. This is very similar to what is done in the `launchbox:create_popup()` function. We are re-using the my_launchbox_widget object from the example above.
+The next example shows how to use the launcher widget in a parent wibox. This is very similar to what is done in the `launchbox:create_popup()` function. We are re-using the _my_launchbox_widget_ object from the example above.
 
 ```lua
 local my_wibox = wibox({
@@ -149,7 +147,7 @@ local my_wibox = wibox({
 })
 ```
 
-Then we need a function to show the wibox and to start the launcher. The list initialization and the start are two separate functions, because in cases where the wibox should be permanently visible, you will need to initialize the list only once, but you may want to start and stop the launcher depending on "mouse::enter" and "mouse::leave" events. The start function has an optional parameter to specify a "done-callback" function that is called when the launcher is aborted or an item has been executed. In this example, we simply hide the wibox.
+We need a function to show the wibox and to start the launcher. The list initialization and the start are two separate functions, because in cases where the wibox should be permanently visible, you will need to initialize the list only once, but you may want to start and stop the launcher depending on "mouse::enter" and "mouse::leave" events. The start function has an optional parameter to specify a "done-callback" function that is called when the launcher is aborted or an item has been executed. In this example, we simply hide the wibox.
 
 ```lua
 my_wibox.open = function()
@@ -159,7 +157,7 @@ my_wibox.open = function()
 end
 ```
 
-We can also add a function to close the wibox and to stop the launcher. This is not really needed for this example, because the stop function is called internally by the launcher itself on abort or execution, and we specified a callback to hide the wibox. But the close function could be used to trigger the stop externally.
+We can add another function to close the wibox and to stop the launcher. This is not really needed for this example, because the stop function is called internally by the launcher itself on abort or execution, and we specified a callback to hide the wibox. But the close function could be used to trigger the stop externally.
 
 ```lua
 my_wibox.close = function()
@@ -169,7 +167,7 @@ end
 ```
 
 ## Function overview
-You have already seen most of the functions and their usage in the examples above, so here is just a short description.
+You have already seen most of the functions and their usage in the examples above, so here is just a brief description.
 
 `launchbox( name, args )`
 
@@ -192,5 +190,5 @@ Stops the keygrabber of the launcher. This function is automatically called when
 
 `launchbox:create_popup( args )`
 
-Create a basic wibox/popup object for the launchbox widget object. You can use the functions `open()`, `close()` or `toggle()` to control the visibility.
+Create a basic wibox/popup object for the launchbox widget object. You can use its functions `open()`, `close()` or `toggle()` to control the visibility.
 - **args (optional)**: table with configuration parameters.
